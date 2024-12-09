@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const jsList = document.querySelector('.js-list');
 
@@ -15,6 +15,7 @@ const kittenOne = <li class="card">
 </article>
 </li>;
 
+
 const kittenTwo = <li class="card">
     <img class="card_img" src="https://dev.adalab.es/sphynx-gato.webp" alt="sphynx-cat" />
      <h3 class="card_title">Fiona</h3>
@@ -26,6 +27,8 @@ const kittenTwo = <li class="card">
          </p>                   
 </li>;
 
+
+
 const kittenThree = <li class= "card">
     <img class="card_img" src="https://dev.adalab.es/maine-coon-cat.webp" alt="maine-coon-cat" />
     <h3 class="card_title">Cielo</h3>
@@ -35,5 +38,8 @@ const kittenThree = <li class= "card">
     bella mirada se ha convertido en una de sus señas de identidad.
      Sus ojos son grandes y las orejas resultan largas y en punta.
     </p>
+</li>;
 
-</li>
+jsList.innerHTML = kittenOne;
+jsList.innerHTML += kittenTwo;
+jsList.innerHTML += kittenThree;
