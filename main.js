@@ -50,3 +50,32 @@ const kittenThree = `<li class= "card">
 jsList.innerHTML = kittenOne;
 jsList.innerHTML += kittenTwo;
 jsList.innerHTML += kittenThree;
+
+
+const btnCancel = document.querySelector ('.js-btn-cancel');
+const form = document.querySelector('.js-form');
+const url = document.querySelector ('.js-url');
+const name = document.querySelector ('.js-name');
+const raza = document.querySelector ('.js-raza');
+const desc = document.querySelector ('.js-desc');
+
+
+btnCancel.addEventListener('click', (event)=>{
+    event.preventDefault();
+    form.classList.toggle('collapsed');
+    url.value = '';
+    name.value = '';
+    raza.value = '';
+    desc.value = '';
+
+})
+const btnSearch = document.querySelector ('.js-button-search');
+const searchDesc = document.querySelector ('.js-in-search-desc');
+
+
+btnSearch.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    const searchDesc = js-in-search-desc.value;
+    
+
+})
