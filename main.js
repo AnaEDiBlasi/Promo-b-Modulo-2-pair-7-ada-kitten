@@ -71,10 +71,32 @@ btnCancel.addEventListener('click', (event)=>{
 })
 const btnSearch = document.querySelector ('.js-button-search');
 const searchDesc = document.querySelector ('.js-in-search-desc');
+console.log(searchDesc)
 
+
+
+const kittenDesc1 = "Porte elegante, su patrón de colorcaracterístico y sus ojos de un azul intenso, pero su historiremonta a Asía al menos hace 500 años, donde tuvo su origenposiblemente."
+
+const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo."
+
+const kittenDesc3 =  "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta."
 
 btnSearch.addEventListener('click', (ev) => {
     ev.preventDefault();
-    const searchDesc = js-in-search-desc.value;
+    const valDesc = searchDesc.value;
+
+
+    if (kittenDesc1.includes(valDesc)) {
+        jsList.innerHTML=kittenOne
+    }
     
+    if (kittenDesc2.includes(valDesc)) {
+        jsList.innerHTML=kittenTwo
+    }
+    
+    if (kittenDesc3.includes(valDesc)) {
+        jsList.innerHTML=kittenThree
+    }
+
 });
+
