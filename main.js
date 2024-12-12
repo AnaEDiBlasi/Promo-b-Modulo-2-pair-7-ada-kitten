@@ -77,5 +77,4 @@ btnSearch.addEventListener('click', (ev) => {
     ev.preventDefault();
     const searchDesc = js-in-search-desc.value;
     
-
-})
+});
