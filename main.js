@@ -32,9 +32,11 @@ const kittenDesc3 =  "Tienen la cabeza cuadrada y los ojos simétricos, por lo q
 
 //Estamos escuchando el evento click, sobre el boton (+) del header. Si el menu esta desplegado se pliega y si esta cerrado se despliega//
 
-btn.addEventListener('click', ()=>{
+/*btn.addEventListener('click', ()=>{
     menu.classList.toggle("collapsed");
-});
+}); 
+*/
+
 
 
 //Estamos sustituyendo las variables que declaramos arriba de cada uno de los gatitos//
@@ -49,27 +51,22 @@ const kittenOne = `<li class="card">
 </article>
 </li>`; 
 
-//PENDIENTE DE REEMPLAZO//
+
 const kittenTwo = `<li class="card">
-    <img class="card_img" src="https://dev.adalab.es/sphynx-gato.webp" alt="sphynx-cat" />
-     <h3 class="card_title">Fiona</h3>
-     <h4 class="card_race">Sphynx</h4>
+    <img class="card_img" src="${kittenImage2}" alt="sphynx-cat" />
+     <h3 class="card_title">${kittenName2}</h3>
+     <h4 class="card_race">${kittenRace2}</h4>
      <p class="card_description">
-         Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
-         hasta con pinta de alienígena han llegado a definir a esta raza
-         gatuna que se caracteriza por la «ausencia» de pelo.
+         ${kittenDesc2}
          </p>                   
 </li>`;
 
-//PENDIENTE DE REEMPLAZO//
 const kittenThree = `<li class= "card">
-    <img class="card_img" src="https://dev.adalab.es/maine-coon-cat.webp" alt="maine-coon-cat" />
-    <h3 class="card_title">Cielo</h3>
-    <h4 class="card_race">Maine Coon</h4>
+    <img class="card_img" src="${kittenImage3}" />
+    <h3 class="card_title">${kittenName3}</h3>
+    <h4 class="card_race">${kittenRace3}</h4>
     <p class="card_description">
-     Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
-    bella mirada se ha convertido en una de sus señas de identidad.
-     Sus ojos son grandes y las orejas resultan largas y en punta.
+             ${kittenDesc3}
     </p>
 </li>`;
 
@@ -133,5 +130,22 @@ btnSearch.addEventListener('click', (ev) => {
 
 
 
+//ejercicio funciones 1 - mostrar ocultar formulario//
 
+function showNewCatForm() {
+    menu.classList.remove("collapsed");
+  }
+  function hideNewCatForm() {
+    menu.classList.add("collapsed");
+  }
+function handleClick() {
+    if (form.classList.contains("collapsed")){
+        showNewCatForm();
+    }
+    else{
+        hideNewCatForm();
+    }
 
+}
+
+btn.addEventListener('click', handleClick);
