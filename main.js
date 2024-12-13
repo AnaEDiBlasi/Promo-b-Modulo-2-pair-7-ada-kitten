@@ -40,7 +40,7 @@ const kittenDesc3 =  "Tienen la cabeza cuadrada y los ojos simétricos, por lo q
 
 
 //Estamos sustituyendo las variables que declaramos arriba de cada uno de los gatitos//
-const kittenOne = `<li class="card">
+ /* const kittenOne = `<li class="card">
 <article>
       <img class="card_img" src="${kittenImage1}" alt="siames-cat" />
       <h3 class="card_title">${kittenName1}</h3>
@@ -69,7 +69,7 @@ const kittenThree = `<li class= "card">
              ${kittenDesc3}
     </p>
 </li>`;
-
+*/
 
 //Estamos reemplazando el contenido que teniamos en HTML en la seccion datos de gatitos , con las variables que declaramos mas arriba para cada uno//
 jsList.innerHTML = kittenOne;
@@ -149,3 +149,26 @@ function handleClick() {
 }
 
 btn.addEventListener('click', handleClick);
+
+
+ //ejercicio 2 Funciones crear variables y nuevo gatito.
+function renderKitten (url, name,race,desc){
+    return `<li class= "card">
+    <img class="card_img" src="${url}" />
+    <h3 class="card_title">${name}</h3>
+    <h4 class="card_race">${race}</h4>
+    <p class="card_description">
+             ${desc}
+    </p>
+</li>`;
+
+}
+
+
+const kittenOne = renderKitten ( kittenImage1, kittenName1, kittenRace1, kittenDesc1);
+
+const kittenTwo = renderKitten ( kittenImage2, kittenName2, kittenRace2, kittenDesc2);
+
+const kittenThree = renderKitten ( kittenImage3, kittenName3, kittenRace3, kittenDesc3);
+
+jsList.innerHTML = kittenOne + kittenTwo + kittenThree;
