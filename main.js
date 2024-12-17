@@ -11,6 +11,7 @@ const jsList = document.querySelector('.js-list');
 
 //Constantes de cada uno de los gatitos //
 //Constantes de gato 1//
+/*
 const kittenImage1 = "https://dev.adalab.es/gato-siames.webp" ;
 const kittenName1 = "Anastacio" ;
 const kittenRace1 = "Siamés" ;
@@ -27,7 +28,7 @@ const kittenImage3 = "https://dev.adalab.es/maine-coon-cat.webp";
 const kittenName3 = "Cielo" ;
 const kittenRace3 = "Maine Coon" ;
 const kittenDesc3 =  "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
-
+ */
 
 
 //Estamos escuchando el evento click, sobre el boton (+) del header. Si el menu esta desplegado se pliega y si esta cerrado se despliega//
@@ -127,7 +128,7 @@ btn.addEventListener('click', handleClick);
 
 
 //ejercicio 2 listado//
-function renderKitten(url, name, race, desc){
+/*function renderKitten(url, name, race, desc){
     return `<li class= "card">
     <img class="card_img" src="${url}" />
     <h3 class="card_title">${name}</h3>
@@ -138,6 +139,7 @@ function renderKitten(url, name, race, desc){
 </li>`;
     
   };
+  
 const kittenOne = renderKitten (kittenImage1,kittenName1,kittenRace1, kittenDesc1);
 const kittenTwo = renderKitten  (kittenImage2,kittenName2,kittenRace2, kittenDesc2);
 const kittenThree = renderKitten (kittenImage3,kittenName3,kittenRace3, kittenDesc3);
@@ -149,23 +151,67 @@ jsList.innerHTML = kittenOne + kittenTwo + kittenThree;
 /*Estamos escuchando el evento click sobre el boton BUSCAR.
 Agregamos un prevent pero por ahora no funciona.
 Estamos haciendo un condicional para que se vean resultados que coicidan con alguna palabra de la descripcion.Si es asi se guarda en la constante valDesc que es igual al VALOR del imput searchDesc*/
-function filterKitten (ev) {
+  function filterKitten (ev) {
     ev.preventDefault();
     const valDesc = searchDesc.value;
     
-    if (kittenDesc1.includes(valDesc)) {
+    if (kittenData_1.includes(valDesc)) {
         jsList.innerHTML=kittenOne
     }
     
-    if (kittenDesc2.includes(valDesc)) {
+    if (kittenData_2.includes(valDesc)) {
         jsList.innerHTML=kittenTwo
     }
     
-    if (kittenDesc3.includes(valDesc)) {
+    if (kittenData_3.includes(valDesc)) {
         jsList.innerHTML=kittenThree
     }
 }
-btnSearch.addEventListener('click', filterKitten);
+btnSearch.addEventListener('click', filterKitten); 
 
 
-//holis
+
+// Ejercicio 1 OBJETOS --> listado: convertir gatito en un objeto
+//17-diciembre hemos modificado lo de arriba (function filter kitten) y puesto en notas el ejercicio 2 Listado
+
+
+const kittenData_1 = {
+    image: 'https://dev.adalab.es/gato-siames.webp',
+    name: 'Anastasio',
+    desc: 'Porte elegante, su patrón de colorcaracterístico y sus ojos de un azul intenso, pero su historiremonta a Asía al menos hace 500 años, donde tuvo su origenposiblemente.',
+    race:'Siamés'
+
+};
+const kittenData_2 = {
+    image: 'https://dev.adalab.es/sphynx-gato.webp',
+    name: 'Fiona',
+    desc: 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.',
+    race: 'Sphynx'
+};
+const kittenData_3 = {
+    image: 'https://dev.adalab.es/maine-coon-cat.webp',
+    name: 'Cielo',
+    desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.',
+    race: 'Maine Coon'
+};
+
+
+
+function renderKitten(kittenData){
+    return `<li class= "card">
+    <img class="card_img" src="${kittenData.image}" />
+    <h3 class="card_title">${kittenData.name}</h3>
+    <h4 class="card_race">${kittenData.race}</h4>
+    <p class="card_description">
+             ${kittenData.desc}
+    </p>
+</li>`;
+    
+  };
+
+  const kittenAll = renderKitten(kittenData_1);
+
+
+
+
+
