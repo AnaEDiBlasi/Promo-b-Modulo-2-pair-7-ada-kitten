@@ -40,7 +40,7 @@ const kittenDesc3 =  "Tienen la cabeza cuadrada y los ojos simétricos, por lo q
 
 
 //Estamos sustituyendo las variables que declaramos arriba de cada uno de los gatitos//
-const kittenOne = `<li class="card">
+/* const kittenOne = `<li class="card">
 <article>
       <img class="card_img" src="${kittenImage1}" alt="siames-cat" />
       <h3 class="card_title">${kittenName1}</h3>
@@ -70,7 +70,7 @@ const kittenThree = `<li class= "card">
     </p>
 </li>`;
 
-
+*/
 //Estamos reemplazando el contenido que teniamos en HTML en la seccion datos de gatitos , con las variables que declaramos mas arriba para cada uno//
 /*jsList.innerHTML = kittenOne;
 jsList.innerHTML += kittenTwo;
