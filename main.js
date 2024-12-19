@@ -40,8 +40,31 @@ const kittenData_3 = {
     race: 'Maine Coon'
 };
 
-
+//18-  Diciembre arrays
 const kittenDataList=[kittenData_1, kittenData_2, kittenData_3];
+
+//19diciembre BUCLES
+//debugger;
+function renderKittenItem (kittenDataList){
+    const li = `<li class= "card">
+    <img class="card_img" src="${kittenDataList.image}" />
+    <h3 class="card_title">${kittenDataList.name}</h3>
+    <h4 class="card_race">${kittenDataList.race}</h4>
+    <p class="card_description">${kittenDataList.desc} </p></li>`;
+    return li;
+};
+
+
+function renderKittenList(){
+    
+    for( const oneKitten of kittenDataList){
+        jsList.innerHTML += renderKittenItem(oneKitten);
+    };
+
+};
+
+renderKittenList();
+console.log();
 
 
 //Estamos reemplazando el contenido que teniamos en HTML en la seccion datos de gatitos , con las variables que declaramos mas arriba para cada uno//
@@ -126,7 +149,11 @@ Estamos haciendo un condicional para que se vean resultados que coicidan con alg
     const valDesc = searchDesc.value;
     
     if (kittenData_1.desc.includes(valDesc)) {
-        jsList.innerHTML=renderKitten(kittenData_1);
+        jsList.innerHTML= '';
+        for(const kittenItem of kittenDataList){
+            jsList.innerHTML += renderKittenItem(oneKitten); // 19diciembre ejercicio 2bucles OJO!!
+
+        }
     }
     
     if (kittenData_2.desc.includes(valDesc)) {
@@ -146,7 +173,7 @@ btnSearch.addEventListener('click', filterKitten);
 
 
 
-
+/*
 
 function renderKitten(kittenData){
     return `<li class= "card">
@@ -163,7 +190,9 @@ function renderKitten(kittenData){
 jsList.innerHTML = renderKitten(kittenDataList[0]);
 jsList.innerHTML += renderKitten(kittenDataList[1]);
 jsList.innerHTML += renderKitten(kittenDataList[2]);
+ */
 
 
 
-//18-  Diciembre arrays
+
+
